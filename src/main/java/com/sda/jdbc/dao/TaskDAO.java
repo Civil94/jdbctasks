@@ -44,6 +44,8 @@ public class TaskDAO implements AutoCloseable {
                     resultSet.getString("description"),
                     resultSet.getLong("user_id")));
         }
+        resultSet.close();
+        preparedStatement.close();
         return Optional.empty();
     }
 
@@ -58,6 +60,8 @@ public class TaskDAO implements AutoCloseable {
                     resultSet.getString("description"),
                     resultSet.getLong("user_id")));
         }
+        resultSet.close();
+        statement.close();
         return listOfTasks;
     }
 
@@ -91,6 +95,8 @@ public class TaskDAO implements AutoCloseable {
                     resultSet.getString("description"),
                     resultSet.getLong("user_id")));
         }
+        resultSet.close();
+        preparedStatement.close();
         return listOfAllTasksForSpecificUser;
     }
 
